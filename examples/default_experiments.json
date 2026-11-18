@@ -1,0 +1,450 @@
+{
+ "format": "sliding-window-intertextuality",
+ "version": 1,
+ "title": "Matthew 7:1-6 against 1 Clement 13 and Psalm 25",
+ "created_with": "built into the notebook",
+ "models": [
+  "Qwen/Qwen3.5-4B",
+  "Qwen/Qwen3.5-27B"
+ ],
+ "experiments": [
+  {
+   "id": "clem13-grc",
+   "title": "1 Clement 13 · Greek",
+   "kind": "true positive",
+   "query": {
+    "name": "Matthew 7:1-6",
+    "rows": [
+     {
+      "reference": "Matthew 7:1",
+      "text": "Μὴ κρίνετε, ἵνα μὴ κριθῆτε·"
+     },
+     {
+      "reference": "Matthew 7:2",
+      "text": "ἐν ᾧ γὰρ κρίματι κρίνετε κριθήσεσθε, καὶ ἐν ᾧ μέτρῳ μετρεῖτε μετρηθήσεται ὑμῖν."
+     },
+     {
+      "reference": "Matthew 7:3",
+      "text": "τί δὲ βλέπεις τὸ κάρφος τὸ ἐν τῷ ὀφθαλμῷ τοῦ ἀδελφοῦ σου, τὴν δὲ ἐν τῷ σῷ ὀφθαλμῷ δοκὸν οὐ κατανοεῖς;"
+     },
+     {
+      "reference": "Matthew 7:4",
+      "text": "ἢ πῶς ἐρεῖς τῷ ἀδελφῷ σου· Ἄφες ἐκβάλω τὸ κάρφος ἐκ τοῦ ὀφθαλμοῦ σου, καὶ ἰδοὺ ἡ δοκὸς ἐν τῷ ὀφθαλμῷ σοῦ;"
+     },
+     {
+      "reference": "Matthew 7:5",
+      "text": "ὑποκριτά, ἔκβαλε πρῶτον ἐκ τοῦ ὀφθαλμοῦ σοῦ τὴν δοκόν, καὶ τότε διαβλέψεις ἐκβαλεῖν τὸ κάρφος ἐκ τοῦ ὀφθαλμοῦ τοῦ ἀδελφοῦ σου."
+     },
+     {
+      "reference": "Matthew 7:6",
+      "text": "Μὴ δῶτε τὸ ἅγιον τοῖς κυσίν, μηδὲ βάλητε τοὺς μαργαρίτας ὑμῶν ἔμπροσθεν τῶν χοίρων, μήποτε καταπατήσουσιν αὐτοὺς ἐν τοῖς ποσὶν αὐτῶν καὶ στραφέντες ῥήξωσιν ὑμᾶς."
+     }
+    ]
+   },
+   "corpus": {
+    "name": "1 Clement 13",
+    "rows": [
+     {
+      "reference": "1 Clement 13:1",
+      "text": "Ταπεινοφρονήσωμεν οὖν, ἀδελφοί, ἀποθέμενοι πᾶσαν ἀλαζονείαν καὶ τῦφος καὶ ἀφροσύνην καὶ ὀργάς, καὶ ποιήσωμεν τὸ γεγραμμένον, λέγει γὰρ τὸ πνεῦμα τὸ ἅγιον· Μὴ καυχάσθω ὁ σοφὸς ἐν τῇ σοφίᾳ αὐτοῦ μηδὲ ὁ ἰσχυρὸς ἐν τῇ ἰσχύϊ αὐτοῦ μηδὲ ὁ πλούσιος ἐν τῷ πλούτῳ αὐτοῦ, ἀλλ’ ἤ ὁ καυχώμενος ἐν κυρίῳ καυχάσθω, τοῦ ἐκζητεῖν αὐτὸν καὶ ποιεῖν κρίμα καὶ δικαιοσύνην· μάλιστα μεμνημένοι τῶν λόγων τοῦ κυρίου Ἰησοῦ, οὓς ἐλάλησεν διδάσκων ἐπιείκειαν καὶ μακροθυμίαν."
+     },
+     {
+      "reference": "1 Clement 13:2",
+      "text": "οὕτως γὰρ εἶπεν· Ἐλεᾶτε, ἵνα ἐλεηθῆτε· ἀφίετε, ἵνα ἀφεθῇ ὑμῖν· ὡς ποιεῖτε, οὕτω ποιηθήσεται ὑμῖν· ὡς δίδοτε, οὕτως δοθήσεται ὑμῖν· ὡς κρίνετε, οὕτως κριθήσεσθε· ὡς χρηστεύεσθε, οὕτως χρηστευθήσεται ὑμῖν· ᾧ μέτρῳ μετρεῖτε, ἐν αὐτῷ μετρηθήσεται ὑμῖν."
+     },
+     {
+      "reference": "1 Clement 13:3",
+      "text": "ταύτῃ τῇ ἐντολῇ καὶ τοῖς παραγγέλμασιν τούτοις στηρίξωμεν ἑαυτοὺς εἰς τὸ πορεύεσθαι ὑπηκόους ὄντας τοῖς ἁγιοπρεπέσι λόγοις αὐτοῦ, ταπεινοφρονοῦντες· φησὶν γὰρ ὁ ἅγιος λόγος·"
+     },
+     {
+      "reference": "1 Clement 13:4",
+      "text": "Ἐπὶ τίνα ἐπιβλέψω, ἀλλ’ ἢ ἐπὶ τὸν πραῢν καὶ ἡσύχιον καὶ τρέμοντά μου τὰ λόγια."
+     }
+    ]
+   },
+   "window_words": 40,
+   "stride_words": 4,
+   "regions": [
+    {
+     "from": "1 Clement 13:2",
+     "to": "1 Clement 13:2",
+     "kind": "quotation",
+     "label": "quotes Matt 7:1-2"
+    },
+    {
+     "from": "1 Clement 13:1",
+     "to": "1 Clement 13:1",
+     "kind": "overlap",
+     "label": "τὸ ἅγιον, κρίμα"
+    }
+   ],
+   "notes": "1 Clement 13:2 quotes a string of sayings of Jesus, among them Matthew 7:1-2 (ὡς κρίνετε, οὕτως κριθήσεσθε … ᾧ μέτρῳ μετρεῖτε, ἐν αὐτῷ μετρηθήσεται ὑμῖν). 13:1 quotes Jeremiah 9:23-24 and 13:4 Isaiah 66:2; 13:1 shares τὸ ἅγιον and κρίμα with the query only by chance. Greek: SBLGNT (MorphGNT); 1 Clement, Open Apostolic Fathers (Lake 1912 text, CC BY-SA 4.0); Psalm, Swete's LXX."
+  },
+  {
+   "id": "ps25-grc",
+   "title": "Psalm 25 · Greek",
+   "kind": "true negative",
+   "query": {
+    "name": "Matthew 7:1-6",
+    "rows": [
+     {
+      "reference": "Matthew 7:1",
+      "text": "Μὴ κρίνετε, ἵνα μὴ κριθῆτε·"
+     },
+     {
+      "reference": "Matthew 7:2",
+      "text": "ἐν ᾧ γὰρ κρίματι κρίνετε κριθήσεσθε, καὶ ἐν ᾧ μέτρῳ μετρεῖτε μετρηθήσεται ὑμῖν."
+     },
+     {
+      "reference": "Matthew 7:3",
+      "text": "τί δὲ βλέπεις τὸ κάρφος τὸ ἐν τῷ ὀφθαλμῷ τοῦ ἀδελφοῦ σου, τὴν δὲ ἐν τῷ σῷ ὀφθαλμῷ δοκὸν οὐ κατανοεῖς;"
+     },
+     {
+      "reference": "Matthew 7:4",
+      "text": "ἢ πῶς ἐρεῖς τῷ ἀδελφῷ σου· Ἄφες ἐκβάλω τὸ κάρφος ἐκ τοῦ ὀφθαλμοῦ σου, καὶ ἰδοὺ ἡ δοκὸς ἐν τῷ ὀφθαλμῷ σοῦ;"
+     },
+     {
+      "reference": "Matthew 7:5",
+      "text": "ὑποκριτά, ἔκβαλε πρῶτον ἐκ τοῦ ὀφθαλμοῦ σοῦ τὴν δοκόν, καὶ τότε διαβλέψεις ἐκβαλεῖν τὸ κάρφος ἐκ τοῦ ὀφθαλμοῦ τοῦ ἀδελφοῦ σου."
+     },
+     {
+      "reference": "Matthew 7:6",
+      "text": "Μὴ δῶτε τὸ ἅγιον τοῖς κυσίν, μηδὲ βάλητε τοὺς μαργαρίτας ὑμῶν ἔμπροσθεν τῶν χοίρων, μήποτε καταπατήσουσιν αὐτοὺς ἐν τοῖς ποσὶν αὐτῶν καὶ στραφέντες ῥήξωσιν ὑμᾶς."
+     }
+    ]
+   },
+   "corpus": {
+    "name": "Psalm 25",
+    "rows": [
+     {
+      "reference": "Psalm 25:1",
+      "text": "Πρὸς σέ, Κύριε, ἦρα τὴν ψυχήν μου,"
+     },
+     {
+      "reference": "Psalm 25:2",
+      "text": "ὁ θεός μου· ἐπὶ σοὶ πέποιθα· μὴ καταισχυνθείην, μηδὲ καταγελασάτωσάν μου οἱ ἐχθροί μου."
+     },
+     {
+      "reference": "Psalm 25:3",
+      "text": "καὶ γὰρ πάντες οἱ ὑπομένοντές σε οὐ μὴ καταισχυνθῶσιν· αἰσχυνθήτωσαν οἱ ἀνομοῦντες διὰ κενῆς."
+     },
+     {
+      "reference": "Psalm 25:4",
+      "text": "τὰς ὁδούς σου, Κύριε, γνώρισόν μοι, καὶ τὰς τρίβους σου δίδαξόν με·"
+     },
+     {
+      "reference": "Psalm 25:5",
+      "text": "ὁδήγησόν με ἐπὶ τὴν ἀλήθειάν σου καὶ δίδαξόν με, ὅτι σὺ εἶ ὁ θεὸς ὁ σωτήρ μου, καὶ σὲ ὑπέμεινα ὅλην τὴν ἡμέραν."
+     },
+     {
+      "reference": "Psalm 25:6",
+      "text": "μνήσθητι τῶν οἰκτειρμῶν σου, καὶ τὰ ἐλέη σου, ὅτι ἀπὸ τοῦ αἰῶνός εἰσιν."
+     },
+     {
+      "reference": "Psalm 25:7",
+      "text": "ἁμαρτίας νεότητός μου καὶ ἀγνοίας μὴ μνησθῇς· κατὰ τὸ ἔλεός σου μνήσθητί μου ἕνεκα τῆς χρηστότητός σου, Κύριε."
+     },
+     {
+      "reference": "Psalm 25:8",
+      "text": "χρηστὸς καὶ εὐθὴς ὁ κύριος· διὰ τοῦτο νομοθετήσει ἁμαρτάνοντας ἐν ὁδῷ."
+     },
+     {
+      "reference": "Psalm 25:9",
+      "text": "ὁδηγήσει πρᾳεῖς ἐν κρίσει, διδάξει πρᾳεῖς ὁδοὺς αὐτοῦ."
+     },
+     {
+      "reference": "Psalm 25:10",
+      "text": "πᾶσαι αἱ ὁδοὶ Κυρίου ἔλεος καὶ ἀλήθεια τοῖς ἐκζητοῦσιν τὴν διαθήκην αὐτοῦ καὶ τὰ μαρτύρια αὐτοῦ."
+     },
+     {
+      "reference": "Psalm 25:11",
+      "text": "ἕνεκα τοῦ ὀνόματός σου, Κύριε, καὶ ἱλάσῃ τῇ ἁμαρτίᾳ μου· πολλὴ γάρ ἐστιν."
+     },
+     {
+      "reference": "Psalm 25:12",
+      "text": "τίς ἐστιν ἄνθρωπος ὁ φοβούμενος τὸν κύριον; νομοθετήσει αὐτῷ ἐν ὁδῷ ᾗ ᾑρετίσατο·"
+     },
+     {
+      "reference": "Psalm 25:13",
+      "text": "ἡ ψυχὴ αὐτοῦ ἐν ἀγαθοῖς αὐλισθήσεται, καὶ τὸ σπέρμα αὐτοῦ κληρονομήσει γῆν."
+     },
+     {
+      "reference": "Psalm 25:14",
+      "text": "κραταίωμα Κύριος τῶν φοβουμένων αὐτόν, καὶ τὸ ὄνομα Κυρίου τῶν φοβουμένων αὐτόν, καὶ ἡ διαθήκη αὐτοῦ τοῦ δηλῶσαι αὐτοῖς·"
+     },
+     {
+      "reference": "Psalm 25:15",
+      "text": "οἱ ὀφθαλμοί μου διὰ παντὸς πρὸς τὸν κύριον, ὅτι αὐτὸς ἐκσπάσει ἐκ παγίδος τοὺς πόδας μου."
+     },
+     {
+      "reference": "Psalm 25:16",
+      "text": "ἐπίβλεψον ἐπ᾽ ἐμὲ καὶ ἐλέησόν με, ὅτι μονογενὴς καὶ πτωχός εἰμι ἐγώ."
+     },
+     {
+      "reference": "Psalm 25:17",
+      "text": "αἱ θλίψεις τῆς καρδίας μου ἐπληθύνθησαν, ἐκ τῶν ἀναγκῶν μου ἐξάγαγέ με."
+     },
+     {
+      "reference": "Psalm 25:18",
+      "text": "ἴδε τὴν ταπείνωσίν μου καὶ τὸν κόπον μου, καὶ ἄφες πάσας τὰς ἁμαρτίας μου."
+     },
+     {
+      "reference": "Psalm 25:19",
+      "text": "ἴδε τοὺς ἐχθρούς μου, ὅτι ἐπληθύνθησαν, καὶ μῖσος ἄδικον ἐμίσησάν με."
+     },
+     {
+      "reference": "Psalm 25:20",
+      "text": "φύλαξον τὴν ψυχήν μου καὶ ῥῦσαί με· μὴ καταισχυνθείην, ὅτι ἤλπισα ἐπὶ σέ."
+     },
+     {
+      "reference": "Psalm 25:21",
+      "text": "ἄκακοι καὶ εὐθεῖς ἐκολλῶντό μοι, ὅτι ὑπέμεινά σε, Κύριε."
+     },
+     {
+      "reference": "Psalm 25:22",
+      "text": "λύτρωσαι, ὁ θεός, τὸν Ἰσραὴλ ἐκ πασῶν τῶν θλίψεων αὐτοῦ."
+     }
+    ]
+   },
+   "window_words": 40,
+   "stride_words": 4,
+   "regions": [
+    {
+     "from": "Psalm 25:9",
+     "to": "Psalm 25:9",
+     "kind": "overlap",
+     "label": "κρίσει"
+    },
+    {
+     "from": "Psalm 25:15",
+     "to": "Psalm 25:16",
+     "kind": "overlap",
+     "label": "ὀφθαλμοί, πόδας, ἐπίβλεψον"
+    },
+    {
+     "from": "Psalm 25:18",
+     "to": "Psalm 25:18",
+     "kind": "overlap",
+     "label": "ἄφες"
+    }
+   ],
+   "notes": "Psalm 25 has no literary relationship with Matthew 7:1-6. It shares a few words: judgment (25:9), eyes and feet (25:15), looking (ἐπίβλεψον 25:16; English “turn”, cf. 7:6) and ἄφες (25:18, “forgive”, the same form as “let me” in 7:4). The Greek is Septuagint Psalm 24, which English Bibles number 25. Greek: SBLGNT (MorphGNT); 1 Clement, Open Apostolic Fathers (Lake 1912 text, CC BY-SA 4.0); Psalm, Swete's LXX."
+  },
+  {
+   "id": "clem13-eng",
+   "title": "1 Clement 13 · English",
+   "kind": "true positive",
+   "query": {
+    "name": "Matthew 7:1-6",
+    "rows": [
+     {
+      "reference": "Matthew 7:1",
+      "text": "Judge not, that ye be not judged."
+     },
+     {
+      "reference": "Matthew 7:2",
+      "text": "For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again."
+     },
+     {
+      "reference": "Matthew 7:3",
+      "text": "And why beholdest thou the mote that is in thy brother’s eye, but considerest not the beam that is in thine own eye?"
+     },
+     {
+      "reference": "Matthew 7:4",
+      "text": "Or how wilt thou say to thy brother, Let me pull out the mote out of thine eye; and, behold, a beam is in thine own eye?"
+     },
+     {
+      "reference": "Matthew 7:5",
+      "text": "Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye."
+     },
+     {
+      "reference": "Matthew 7:6",
+      "text": "Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you."
+     }
+    ]
+   },
+   "corpus": {
+    "name": "1 Clement 13",
+    "rows": [
+     {
+      "reference": "1 Clement 13:1",
+      "text": "Let us, therefore, be humble-minded, brethren, putting aside all arrogance and conceit and foolishness and wrath, and let us do that which is written (for the Holy Spirit says, “Let not the wise man boast himself in his wisdom, nor the strong man in his strength, nor the rich man in his riches, but he that boasteth let him boast in the Lord, to seek him out and to do judgment and righteousness”), especially remembering the words of the Lord Jesus which he spoke when he was teaching gentleness and longsuffering."
+     },
+     {
+      "reference": "1 Clement 13:2",
+      "text": "For he spoke thus: “Be merciful, that ye may obtain mercy. Forgive, that ye may be forgiven. As ye do, so shall it be done unto you. As ye give, so shall it be given unto you. As ye judge, so shall ye be judged. As ye are kind, so shall kindness be shewn you. With what measure ye mete, it shall be measured to you.”"
+     },
+     {
+      "reference": "1 Clement 13:3",
+      "text": "With this commandment and with these injunctions let us strengthen ourselves to walk in obedience to his hallowed words and let us be humble-minded, for the holy word says,"
+     },
+     {
+      "reference": "1 Clement 13:4",
+      "text": "“On whom shall I look, but on the meek and gentle and him who trembles at my oracles.”"
+     }
+    ]
+   },
+   "window_words": 56,
+   "stride_words": 6,
+   "regions": [
+    {
+     "from": "1 Clement 13:2",
+     "to": "1 Clement 13:2",
+     "kind": "quotation",
+     "label": "quotes Matt 7:1-2"
+    },
+    {
+     "from": "1 Clement 13:1",
+     "to": "1 Clement 13:1",
+     "kind": "overlap",
+     "label": "“holy”, “judgment”"
+    }
+   ],
+   "notes": "1 Clement 13:2 quotes a string of sayings of Jesus, among them Matthew 7:1-2 (ὡς κρίνετε, οὕτως κριθήσεσθε … ᾧ μέτρῳ μετρεῖτε, ἐν αὐτῷ μετρηθήσεται ὑμῖν). 13:1 quotes Jeremiah 9:23-24 and 13:4 Isaiah 66:2; 13:1 shares τὸ ἅγιον and κρίμα with the query only by chance. English needs 1.39 times as many words as Greek for this text, so the window (56 words) and step (6) are scaled to cover about the same stretch as the Greek. English: King James Version; 1 Clement, Kirsopp Lake (1912)."
+  },
+  {
+   "id": "ps25-eng",
+   "title": "Psalm 25 · English",
+   "kind": "true negative",
+   "query": {
+    "name": "Matthew 7:1-6",
+    "rows": [
+     {
+      "reference": "Matthew 7:1",
+      "text": "Judge not, that ye be not judged."
+     },
+     {
+      "reference": "Matthew 7:2",
+      "text": "For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again."
+     },
+     {
+      "reference": "Matthew 7:3",
+      "text": "And why beholdest thou the mote that is in thy brother’s eye, but considerest not the beam that is in thine own eye?"
+     },
+     {
+      "reference": "Matthew 7:4",
+      "text": "Or how wilt thou say to thy brother, Let me pull out the mote out of thine eye; and, behold, a beam is in thine own eye?"
+     },
+     {
+      "reference": "Matthew 7:5",
+      "text": "Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye."
+     },
+     {
+      "reference": "Matthew 7:6",
+      "text": "Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you."
+     }
+    ]
+   },
+   "corpus": {
+    "name": "Psalm 25",
+    "rows": [
+     {
+      "reference": "Psalm 25:1",
+      "text": "Unto thee, O LORD, do I lift up my soul."
+     },
+     {
+      "reference": "Psalm 25:2",
+      "text": "O my God, I trust in thee: let me not be ashamed, let not mine enemies triumph over me."
+     },
+     {
+      "reference": "Psalm 25:3",
+      "text": "Yea, let none that wait on thee be ashamed: let them be ashamed which transgress without cause."
+     },
+     {
+      "reference": "Psalm 25:4",
+      "text": "Shew me thy ways, O LORD; teach me thy paths."
+     },
+     {
+      "reference": "Psalm 25:5",
+      "text": "Lead me in thy truth, and teach me: for thou art the God of my salvation; on thee do I wait all the day."
+     },
+     {
+      "reference": "Psalm 25:6",
+      "text": "Remember, O LORD, thy tender mercies and thy lovingkindnesses; for they have been ever of old."
+     },
+     {
+      "reference": "Psalm 25:7",
+      "text": "Remember not the sins of my youth, nor my transgressions: according to thy mercy remember thou me for thy goodness’ sake, O LORD."
+     },
+     {
+      "reference": "Psalm 25:8",
+      "text": "Good and upright is the LORD: therefore will he teach sinners in the way."
+     },
+     {
+      "reference": "Psalm 25:9",
+      "text": "The meek will he guide in judgment: and the meek will he teach his way."
+     },
+     {
+      "reference": "Psalm 25:10",
+      "text": "All the paths of the LORD are mercy and truth unto such as keep his covenant and his testimonies."
+     },
+     {
+      "reference": "Psalm 25:11",
+      "text": "For thy name’s sake, O LORD, pardon mine iniquity; for it is great."
+     },
+     {
+      "reference": "Psalm 25:12",
+      "text": "What man is he that feareth the LORD? him shall he teach in the way that he shall choose."
+     },
+     {
+      "reference": "Psalm 25:13",
+      "text": "His soul shall dwell at ease; and his seed shall inherit the earth."
+     },
+     {
+      "reference": "Psalm 25:14",
+      "text": "The secret of the LORD is with them that fear him; and he will shew them his covenant."
+     },
+     {
+      "reference": "Psalm 25:15",
+      "text": "Mine eyes are ever toward the LORD; for he shall pluck my feet out of the net."
+     },
+     {
+      "reference": "Psalm 25:16",
+      "text": "Turn thee unto me, and have mercy upon me; for I am desolate and afflicted."
+     },
+     {
+      "reference": "Psalm 25:17",
+      "text": "The troubles of my heart are enlarged: O bring thou me out of my distresses."
+     },
+     {
+      "reference": "Psalm 25:18",
+      "text": "Look upon mine affliction and my pain; and forgive all my sins."
+     },
+     {
+      "reference": "Psalm 25:19",
+      "text": "Consider mine enemies; for they are many; and they hate me with cruel hatred."
+     },
+     {
+      "reference": "Psalm 25:20",
+      "text": "O keep my soul, and deliver me: let me not be ashamed; for I put my trust in thee."
+     },
+     {
+      "reference": "Psalm 25:21",
+      "text": "Let integrity and uprightness preserve me; for I wait on thee."
+     },
+     {
+      "reference": "Psalm 25:22",
+      "text": "Redeem Israel, O God, out of all his troubles."
+     }
+    ]
+   },
+   "window_words": 47,
+   "stride_words": 5,
+   "regions": [
+    {
+     "from": "Psalm 25:9",
+     "to": "Psalm 25:9",
+     "kind": "overlap",
+     "label": "“judgment”"
+    },
+    {
+     "from": "Psalm 25:15",
+     "to": "Psalm 25:16",
+     "kind": "overlap",
+     "label": "“eyes”, “feet”, “turn”"
+    }
+   ],
+   "notes": "Psalm 25 has no literary relationship with Matthew 7:1-6. It shares a few words: judgment (25:9), eyes and feet (25:15), looking (ἐπίβλεψον 25:16; English “turn”, cf. 7:6) and ἄφες (25:18, “forgive”, the same form as “let me” in 7:4). The Greek is Septuagint Psalm 24, which English Bibles number 25. English needs 1.18 times as many words as Greek for this text, so the window (47 words) and step (5) are scaled to cover about the same stretch as the Greek. English: King James Version; 1 Clement, Kirsopp Lake (1912)."
+  }
+ ]
+}

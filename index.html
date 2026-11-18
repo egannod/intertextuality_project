@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intertextuality experiment builder</title>
+  <meta name="description" content="Turn a query text and a corpus into an experiment file for the molab notebook, where Qwen3.5 rates how closely each stretch of the corpus relates to the query.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='9' width='3' height='6' rx='1' fill='%232a78d6'/%3E%3Crect x='6.5' y='2' width='3' height='13' rx='1' fill='%232a78d6'/%3E%3Crect x='12' y='6' width='3' height='9' rx='1' fill='%232a78d6'/%3E%3C/svg%3E">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <h1>Intertextuality experiment builder</h1>
+    <p class="lede">Choose a query text and a corpus, and this page writes an experiment file for the molab notebook. There, on a free GPU, Qwen3.5-4B and Qwen3.5-27B slide a window across the corpus and rate how closely each stretch relates to the query, from 0 to 10.</p>
+    <p class="local">Your texts stay in this browser until you download the file. Nothing is sent anywhere.</p>
+  </header>
+
+  <main>
+    <section class="step" aria-labelledby="h-texts">
+      <h2 id="h-texts"><span class="num" aria-hidden="true">1</span>The texts</h2>
+      <div class="synopsis">
+        <div class="column" id="query-panel" data-kind="query">
+          <h3>Query</h3>
+          <p class="hint">The passage you are looking for echoes of.</p>
+          <label class="drop">
+            <input type="file" accept=".csv,.tsv,.txt,text/csv" class="file-input">
+            <span class="drop-text">Choose a CSV file or drop it here</span>
+          </label>
+          <div class="examples">
+            <span class="examples-label">Or use an example:</span>
+            <span class="example-buttons"></span>
+          </div>
+          <div class="passage-preview" aria-live="polite"></div>
+        </div>
+        <div class="column" id="corpus-panel" data-kind="corpus">
+          <h3>Corpus</h3>
+          <p class="hint">The text the window slides over.</p>
+          <label class="drop">
+            <input type="file" accept=".csv,.tsv,.txt,text/csv" class="file-input">
+            <span class="drop-text">Choose a CSV file or drop it here</span>
+          </label>
+          <div class="examples">
+            <span class="examples-label">Or use an example:</span>
+            <span class="example-buttons"></span>
+          </div>
+          <div class="passage-preview" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <details class="format-help">
+        <summary>CSV format</summary>
+        <p>One row per verse, line or section, with a header row. The <code>text</code> column holds the words; an optional <code>reference</code> column labels each row on the graphs and in the tables. The model only ever sees the text, joined into one passage, never the references.</p>
+<pre>reference,text
+Matthew 7:1,"Judge not, that ye be not judged."
+Matthew 7:2,"For with what judgment ye judge, ye shall be judged: …"</pre>
+        <p>Save as UTF-8 so Greek, Hebrew and other scripts survive (spreadsheet programs call this “CSV UTF-8”). Put quotes around text that contains commas. Semicolon- and tab-separated files work too. A file with no header is read as text only (one column) or as reference, then text (two columns). The example files are good templates.</p>
+      </details>
+    </section>
+
+    <section class="step" aria-labelledby="h-settings">
+      <h2 id="h-settings"><span class="num" aria-hidden="true">2</span>The experiment</h2>
+      <div class="settings">
+        <label class="field wide">
+          <span>Name</span>
+          <input id="exp-title" type="text" autocomplete="off" spellcheck="false" placeholder="for example Psalm 25 · Greek">
+        </label>
+        <label class="field kind">
+          <span>What you expect</span>
+          <select id="exp-kind">
+            <option value="">Not stated</option>
+            <option value="true positive">True positive (a known quotation or allusion)</option>
+            <option value="true negative">True negative (no relationship)</option>
+            <option value="exploratory">Exploratory</option>
+          </select>
+        </label>
+      </div>
+      <div class="settings">
+        <label class="field narrow">
+          <span>Window</span>
+          <span class="with-unit"><input id="window-size" type="number" min="2" max="400" step="1" value="40" inputmode="numeric"> words</span>
+        </label>
+        <label class="field narrow">
+          <span>Step</span>
+          <span class="with-unit"><input id="stride" type="number" min="1" max="400" step="1" value="4" inputmode="numeric"> words</span>
+        </label>
+        <p class="window-count" id="window-count" aria-live="polite"></p>
+      </div>
+      <p class="field-note">40 words with a step of 4 suits Greek. English needs about 1.2 to 1.4 times as many words for the same text, so about 50 words with a step of 5 covers a similar stretch.</p>
+
+      <details class="regions">
+        <summary>Mark verses on the graphs (optional)</summary>
+        <p class="field-note">Type references from the corpus, as they appear in its <code>reference</code> column, separated by commas. A range like <code>25:15-16</code> works, and the shared beginning (such as “Psalm ”) can be left out. Marked verses are shaded on the graphs, and the summary compares their scores with the rest.</p>
+        <div class="settings">
+          <label class="field wide">
+            <span>Verses that quote the query</span>
+            <input id="regions-quote" type="text" autocomplete="off" spellcheck="false" placeholder="for example 13:2">
+          </label>
+          <label class="field wide">
+            <span>Verses proposed as an allusion or echo</span>
+            <input id="regions-allusion" type="text" autocomplete="off" spellcheck="false" placeholder="for example 2:1-3">
+          </label>
+          <label class="field wide">
+            <span>Verses that only share words with it</span>
+            <input id="regions-overlap" type="text" autocomplete="off" spellcheck="false" placeholder="for example 25:9, 25:15-16">
+          </label>
+        </div>
+        <p class="region-check" id="region-check" aria-live="polite"></p>
+      </details>
+
+      <div class="actions">
+        <button id="add-button" class="primary" type="button" disabled>Add to the experiment file</button>
+        <p class="ready-hint" id="ready-hint">Add a query and a corpus first.</p>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="h-file">
+      <h2 id="h-file"><span class="num" aria-hidden="true">3</span>The experiment file</h2>
+      <p class="hint">One file can hold several experiments; the notebook runs them all with each model.</p>
+      <div id="exp-list" class="exp-list" aria-live="polite"></div>
+      <p class="list-tools">
+        <button type="button" class="link" id="add-defaults">Add the four built-in experiments</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="link" id="add-suggested">Add the 13 suggested experiments (Greek)</button>
+        <span aria-hidden="true">·</span>
+        <label class="link file-link">Open an experiment file<input type="file" accept=".json,application/json" id="open-file" class="file-input"></label>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="link" id="clear-list">Clear the list</button>
+      </p>
+
+      <fieldset class="models">
+        <legend>Models</legend>
+        <label class="check"><input type="checkbox" name="model" value="Qwen/Qwen3.5-4B" checked><span>Qwen3.5-4B <span class="muted">9 GB download</span></span></label>
+        <label class="check"><input type="checkbox" name="model" value="Qwen/Qwen3.5-27B" checked><span>Qwen3.5-27B <span class="muted">56 GB download</span></span></label>
+        <label class="field wide other-model">
+          <span>Another Hugging Face model (optional)</span>
+          <input id="other-model" type="text" autocomplete="off" spellcheck="false" placeholder="for example Qwen/Qwen3.6-27B">
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button id="download-button" class="primary" type="button" disabled>Download the experiment file</button>
+        <p class="ready-hint" id="file-summary"></p>
+      </div>
+      <div class="error" id="error" role="alert" hidden></div>
+    </section>
+
+    <section class="step" aria-labelledby="h-molab">
+      <h2 id="h-molab"><span class="num" aria-hidden="true">4</span>Run it on molab</h2>
+      <p class="hint">molab is marimo’s free cloud notebook service, with a large GPU you can switch on. Sign in with GitHub or Google.</p>
+      <ol class="howto">
+        <li><strong>Open the notebook in molab.</strong>
+          <span class="molab-row"><a id="molab-link" class="molab-button" href="https://molab.marimo.io" target="_blank" rel="noopener">Open in molab</a><span id="molab-note" class="muted"></span></span></li>
+        <li><strong>Switch on the GPU</strong> with the notebook specs button in molab’s header. The notebook restarts with the GPU attached.</li>
+        <li><strong>Run all the cells</strong> with the ▶ run button at the bottom right of the notebook.</li>
+        <li><strong>Drop the experiment file</strong> into the box in section 1 of the notebook. To keep it for later sessions, upload it through the file tree in molab’s sidebar instead, then pick it from the menu below the box.</li>
+        <li><strong>Press “Run the experiments”.</strong> The first run downloads the models, about 65 GB for both, which takes most of the time; the scoring takes a few minutes.</li>
+        <li><strong>Download the results</strong> at the bottom of the notebook: the ranking of every window, graphs of relatedness along the corpus, the corpus with a bar above every word, and the raw scores.</li>
+      </ol>
+      <p class="field-note">The notebook can also run on your own computer: download <a href="notebook/intertextuality_molab.py" download>intertextuality_molab.py</a> and open it with <code>marimo edit intertextuality_molab.py</code>. Qwen3.5-27B needs a GPU with about 60 GB of memory.</p>
+    </section>
+
+    <details class="method">
+      <summary>How the score is calculated</summary>
+      <p>The corpus is split into words. A window of the chosen length starts at the first word and moves forward by the step, with a final window added if needed so the last words are covered. For each window the model receives the whole query and the window’s text, never the references, and is asked for a single integer from 0 to 10:</p>
+      <pre id="prompt-text"></pre>
+      <p>Rather than taking the one number the model would write, the notebook reads the probability the model gives each answer from 0 to 10 and reports the probability-weighted average, which makes the score deterministic and sensitive to small differences between windows. Qwen3.5 thinks before answering by default; the notebook switches that off, so the answer starts straight away. Each word on the graphs gets the average score of the windows containing it.</p>
+    </details>
+  </main>
+
+  <footer>
+    <p>Method after Umphrey, Roberts &amp; Roberts (2024), “Investigating Expert-in-the-Loop LLM Discourse Patterns for Ancient Intertextual Analysis,” <i>Proceedings of the 4th International Conference on Natural Language Processing for Digital Humanities</i>, 31–40.</p>
+    <p>Example texts: SBL Greek New Testament via MorphGNT; 1 Clement in Greek from the Open Apostolic Fathers (Tauber &amp; Macdonald, CC BY-SA 4.0), in English from Lake (1912); Psalm 25 in Greek from Swete’s Septuagint (numbered 24 there); English Bible text King James Version.</p>
+  </footer>
+</body>
+</html>

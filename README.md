@@ -136,4 +136,3 @@ All are in Greek, with the passages marked for the graphs. The query is Matthew 
 - 1 Clement 13, English: Kirsopp Lake, *The Apostolic Fathers*, vol. 1 (Loeb, 1912), public domain.
 - Septuagint: Swete's edition (public domain), via [LXX-Swete-1930](https://github.com/eliranwong/LXX-Swete-1930). The Septuagint numbers Psalm 25 as 24 and Psalm 26 as 25; the files use English numbering, which divides these psalms the same way. Psalm 6 is labelled with English verse numbers (the Septuagint counts the title as verse 1).
 - English Bible text: King James Version.
-# intertextuality_project
